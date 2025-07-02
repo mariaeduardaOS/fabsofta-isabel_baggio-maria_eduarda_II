@@ -2,7 +2,7 @@ export interface Receita {
   id?: number;
   titulo: string;
   descricao: string;
-  ingredientes: string[];  // Lista simples de textos
+  ingredientes: string[];  
   modoPreparo: string;
   usuario?: string; 
   emailCriador?: string; 

@@ -11,7 +11,6 @@ import * as bootstrap from 'bootstrap';
   selector: 'app-receita',
   imports: [HttpClientModule, CommonModule],
   templateUrl: './receita.component.html',
-  styleUrls: ['./receita.component.css'],
   providers: [ReceitaService, Router]
 })
 export class ReceitaComponent {
@@ -21,7 +20,7 @@ export class ReceitaComponent {
     @ViewChild('myModal') modalElement!: ElementRef;
     private modal!: bootstrap.Modal;
 
-    private receitaSelecionado!: Receita;
+    private receitaSelecionada!: Receita;
     
     constructor(
       private receitaService:ReceitaService,
@@ -29,10 +28,8 @@ export class ReceitaComponent {
     ){}
 
     ngOnInit(): void {
-    this.receitaService.listar().subscribe(resposta => {
-  this.listareceitas = resposta;
-});
-
+      this.receitaService.listar().subscribe(resposta => {
+          this.listareceitas = resposta;
       })
     }
     novo(){
@@ -43,7 +40,7 @@ export class ReceitaComponent {
     }
 
     abrirConfirmacao(receita:Receita) {
-        this.receitaSelecionado = receita;
+        this.receitaSelecionada = receita;
         this.modal = new bootstrap.Modal(this.modalElement.nativeElement);
         this.modal.show();
     }
@@ -53,21 +50,25 @@ export class ReceitaComponent {
     }
 
 
-    confirmarExclusao() {
-        this.receitaService.excluirreceita(this.receitaSelecionado.id).subscribe(
-            () => {
-                this.fecharConfirmacao();
-                this.receitaService.getreceitas().subscribe(
-                  receitas => {
-                    this.listareceitas = receitas;
-                  }
-                );
-            },
-            error => {
-                console.error('Erro ao excluir receita:', error);
-            }
-        );
+confirmarExclusao() {
+    const id = this.receitaSelecionada.id;
+    if (id === undefined) {
+        console.error('Erro: receitaSelecionada.id está undefined.');
+        return;
     }
 
-
+    this.receitaService.excluir(id).subscribe(
+        () => {
+            this.fecharConfirmacao();
+            this.receitaService.listar().subscribe(receitas => {
+                this.listareceitas = receitas;
+            });
+        },
+        error => {
+            console.error('Erro ao excluir receita:', error);
+        }
+    );
 }
+
+    }
+

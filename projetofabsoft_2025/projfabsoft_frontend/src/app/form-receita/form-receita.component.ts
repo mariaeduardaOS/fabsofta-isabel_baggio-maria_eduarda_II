@@ -1,40 +1,43 @@
+import { FormsModule } from '@angular/forms'; // Adicione esta linha
 import { Component } from '@angular/core';
-import { receita } from '../model/receita';
-import { receitaService } from '../service/receita.service';
-import { HttpClientModule } from '@angular/common/http';
+import { Receita } from '../model/receita';
+import { ReceitaService } from '../service/receita.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-form-receita',
-  imports: [HttpClientModule, CommonModule, FormsModule],
   templateUrl: './form-receita.component.html',
-  styleUrl: './form-receita.component.css',
-  providers: [receitaService, Router]
+  imports: [CommonModule, FormsModule],
+  providers: [ReceitaService, Router]
 })
 export class FormreceitaComponent {
-    receita:receita = new receita();
+  receita: Receita = {
+    titulo: '',
+    descricao: '',
+    ingredientes: [],
+    modoPreparo: '',
+    usuario: '',
+    emailCriador: ''
+  };
 
-    constructor(
-      private receitaService: receitaService,
-      private router: Router,
-      private activeRouter: ActivatedRoute
-    ) {
-        const id = this.activeRouter.snapshot.paramMap.get('id');
-        
-        if (id) {
-          this.receitaService.getreceitaById(id).subscribe(receita => {
-            this.receita = receita;
-        });
-      }
+  constructor(
+    private receitaService: ReceitaService,
+    private router: Router,
+    private activeRouter: ActivatedRoute
+  ) {
+    const id = this.activeRouter.snapshot.paramMap.get('id');
+    if (id) {
+      this.receitaService.buscarPorId(Number(id)).subscribe(receita => {
+        this.receita = receita;
+      });
     }
+  }
 
-    salvar(){
-      this.receitaService.savereceita(this.receita)
-          .subscribe( res => {
-            this.router.navigate(['receitas']);
-          });
-    }
-
+  salvar() {
+    this.receitaService.adicionar(this.receita)
+      .subscribe(res => {
+        this.router.navigate(['minhas-receitas']); 
+      });
+  }
 }

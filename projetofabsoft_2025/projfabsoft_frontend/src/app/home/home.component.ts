@@ -6,7 +6,6 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
   imports: [BaseChartDirective],
   providers: [provideCharts(withDefaultRegisterables())]
 })
