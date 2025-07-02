@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../service/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',})
+  templateUrl: './login.component.html',
+  imports: [CommonModule, FormsModule]
+})
   
 export class LoginComponent {
   nome = '';

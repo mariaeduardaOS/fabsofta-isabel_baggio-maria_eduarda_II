@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { Receita } from '../model/receita';
 import { ReceitaService } from '../service/receita.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
+  imports: [CommonModule, FormsModule]
 })
 export class HomeComponent {
   termoBusca: string = '';

@@ -4,15 +4,18 @@ import { Receita } from '../model/receita';
 import { ReceitaService } from '../service/receita.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-form-receita',
   templateUrl: './form-receita.component.html',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [HttpClientModule, CommonModule, FormsModule],
   providers: [ReceitaService, Router]
 })
 export class FormreceitaComponent {
+  ingredientesTexto: string = "";
+
   receita: Receita = {
     titulo: '',
     descricao: '',
