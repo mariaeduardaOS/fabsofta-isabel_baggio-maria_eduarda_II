@@ -1,0 +1,12 @@
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/ProjfabsoftApplication.java
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/config/WebConfig.java
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/controller/ReceitaController.java
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/controller/UsuarioController.java
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/entity/Receita.java
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/entity/Usuario.java
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/repository/ReceitaRepository.java
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/repository/UsuarioRepository.java
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/service/ReceitaService.java
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/service/UsuarioService.java
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/service/impl/ReceitaServiceImpl.java
+/workspaces/fabsofta-isabel_baggio-maria_eduarda_II/projetofabsoft_2025/projfabsoft/src/main/java/br/univille/projfabsoft/service/impl/UsuarioServiceImpl.java

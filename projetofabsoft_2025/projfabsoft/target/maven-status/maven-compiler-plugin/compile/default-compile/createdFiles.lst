@@ -1,0 +1,12 @@
+br/univille/projfabsoft/controller/ReceitaController.class
+br/univille/projfabsoft/service/impl/UsuarioServiceImpl.class
+br/univille/projfabsoft/entity/Receita.class
+br/univille/projfabsoft/service/UsuarioService.class
+br/univille/projfabsoft/repository/ReceitaRepository.class
+br/univille/projfabsoft/ProjfabsoftApplication.class
+br/univille/projfabsoft/entity/Usuario.class
+br/univille/projfabsoft/repository/UsuarioRepository.class
+br/univille/projfabsoft/service/impl/ReceitaServiceImpl.class
+br/univille/projfabsoft/controller/UsuarioController.class
+br/univille/projfabsoft/service/ReceitaService.class
+br/univille/projfabsoft/config/WebConfig.class
