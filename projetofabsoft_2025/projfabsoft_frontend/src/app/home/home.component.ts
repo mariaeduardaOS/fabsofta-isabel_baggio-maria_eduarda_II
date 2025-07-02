@@ -1,24 +1,33 @@
 import { Component } from '@angular/core';
-import { ChartConfiguration, ChartOptions } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
-import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+import { Receita } from '../model/receita';
+import { ReceitaService } from '../service/receita.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  imports: [BaseChartDirective],
-  providers: [provideCharts(withDefaultRegisterables())]
+  templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  public chartData: ChartConfiguration['data'] = {
-    labels: ['Janeiro', 'Fevereiro', 'Março'],
-    datasets: [
-      { data: [65, 59, 80], label: 'Vendas' },
-      { data: [165, 159, 180], label: 'Pedidos' }
-    ],
-  };
+  termoBusca: string = '';
+  receitasEncontradas: Receita[] = [];
 
-  public chartOptions: ChartOptions = {
-    responsive: true,
-  };
+  constructor(private receitaService: ReceitaService, private router: Router) {}
+
+  buscar() {
+    const termo = this.termoBusca.toLowerCase().trim();
+
+    if (termo) {
+      this.receitaService.listar().subscribe(receitas => {
+        this.receitasEncontradas = receitas.filter(r =>
+          r.ingredientes.some(ing => ing.toLowerCase().includes(termo))
+        );
+      });
+    } else {
+      this.receitasEncontradas = [];
+    }
+  }
+
+  visualizarDetalhes(receitaId: number) {
+    this.router.navigate(['receitas', receitaId]);
+  }
 }

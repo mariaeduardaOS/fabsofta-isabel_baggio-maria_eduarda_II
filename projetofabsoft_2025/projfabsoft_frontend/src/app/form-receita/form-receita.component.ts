@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms'; // Adicione esta linha
+import { FormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
 import { Receita } from '../model/receita';
 import { ReceitaService } from '../service/receita.service';
@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-form-receita',
   templateUrl: './form-receita.component.html',
+  standalone: true,
   imports: [CommonModule, FormsModule],
   providers: [ReceitaService, Router]
 })

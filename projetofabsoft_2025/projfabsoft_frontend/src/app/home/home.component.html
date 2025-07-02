@@ -1,31 +1,27 @@
-<div class="container">
-  <h2>Exemplo de Gráfico</h2>
-  <div class="d-md-flex justify-content-lg-evenly overflow-scroll">
-    <div class="card" style="width:40%;">
-        <div class="card-body">
-        <h5 class="card-title">Gráfico de Barras</h5>
-        <canvas baseChart
-                [datasets]="chartData.datasets"
-                [labels]="chartData.labels"
-                [options]="chartOptions"
-                [legend]="true"
-                [type]="'bar'">
-        </canvas>
-        </div>
-    </div>
-    <div class="card" style="width:40%;">
-        <div class="card-body">
-        <h5 class="card-title">Gráfico de Linha</h5>
-        <canvas baseChart
-                [datasets]="chartData.datasets"
-                [labels]="chartData.labels"
-                [options]="chartOptions"
-                [legend]="true"
-                [type]="'line'">
-        </canvas>
-        </div>
-    </div>
+<main class="container">
+  <h2>Buscar Receitas por Ingredientes</h2>
 
+  <div class="form-group">
+    <input type="text" [(ngModel)]="termoBusca" class="form-control" placeholder="Ex: ovo, farinha, queijo">
+    <button class="btn btn-primary mt-2" (click)="buscar()">Buscar</button>
   </div>
-  
-</div>
+
+  <div *ngIf="receitasEncontradas.length > 0" class="mt-4">
+    <h4>Receitas Encontradas:</h4>
+    <div *ngFor="let receita of receitasEncontradas" class="card mt-2">
+      <div class="card-body">
+        <h5>{{ receita.titulo }}</h5>
+        <p>{{ receita.descricao }}</p>
+        <button class="btn btn-secondary" (click)="visualizarDetalhes(receita.id!)">Ver Detalhes</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="receitasEncontradas.length === 0 && termoBusca">
+    <p>Nenhuma receita encontrada com esse ingrediente.</p>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2025 Restô com o Chefe</p>
+</footer>
