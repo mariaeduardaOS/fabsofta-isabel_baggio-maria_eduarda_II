@@ -59,13 +59,11 @@ mvn clean install
 3️⃣ Execute a aplicação
 mvn spring-boot:run
 Acesse em:
-
-bash
 http://localhost:8080/api/v1/receitas
+
 ⚠️ Pré-requisitos:
 
 Java 17+
-
 Maven configurado no ambiente
 
 4️⃣ Rodando o Front-end (Angular)
@@ -77,10 +75,8 @@ ng serve
 Acesse em:
 http://localhost:4200
 
-
 👩‍🍳 Desenvolvedoras
 Isabel Arantes Baggio
-
 Maria Eduarda de Oliveira dos Santos
 
 Desenvolvido para Fábrica de Software · Univille · 2025/1.
@@ -88,10 +84,3 @@ Desenvolvido para Fábrica de Software · Univille · 2025/1.
 🥂 Bon Appétit!
 E boas receitas com o Restô — com Chef Maisa!
 
-yaml
-Copiar
-Editar
-
----
-
-Posso te gerar a versão separada só para back ou só para front se quiser. Quer que adapte alguma par
