@@ -1,0 +1,2071 @@
+# Fábrica de Software 2025/1
+
+## [📲🖥️Front-end](https://fabsoft2025frontend-aud3drfgchfaembt.brazilsouth-01.azurewebsites.net/) [🏬Back-end](https://fabsoft2025-adhtctehd6dwgdht.brazilsouth-01.azurewebsites.net/swagger-ui/index.html)
+
+## Repositório dos alunos
+- [Repos](https://gist.github.com/bfed97e91a670a0ccb127ad49f1fda12.git)
+
+
+## Propostas de projeto
+
+- Nome do sistema Ex:(Sistema para Mecânica)
+  - Funcionalidade 1 Cadastrar dados do receita
+  - Funcionalidade 2 Cadastrar veículos
+  - Funcionalidade 3
+<s>
+
+- Nome do sistema Ex:(Sistema para Mecânica)
+  - Funcionalidade 1 Cadastrar dados do receita
+  - Funcionalidade 2 Cadastrar veículos
+  - Funcionalidade 3
+</s>
+
+## Livro Eng Software Moderna
+[Eng. Soft Moderna - Requisitos](https://engsoftmoderna.info/cap3.html)
+
+## Histórias de Usuário
+- Como um Atendente eu gostaria de registrar os dados do receita como: nome, endereço, telefone, email
+- Como um Atendente eu gostaria de registrar os dados do usuario do receita como: marca, modelo, placa
+- Como um Atendente eu gostaria de vincular o usuario ao receita
+- Como um Atedente eu gostaria de agendar uma revisão com os seguintes dados: receita, usuario, data entrada, data saida, valor da revisão
+- Como um Atendente eu gostaria de vincular peças trocadas na revisão com os seguintes dados: codigo, nome, preço unitário
+- Como um Atendente eu gostaria de vincular os serviços de mão de obra realizados na revisão com os seguintes dados: nome do funcionário, quantidade de horas, valor
+
+## Comandos do Git
+
+### Instalação
+[Git Bash](https://git-scm.com/downloads)
+
+### Configuração inicial
+
+```
+git config --global user.name "NOME DO USUARIO NO GITHUB"
+git config --global user.email "EMAIL DA CONTA DO GITHUB"
+```
+### Tipos de mensagens do commit
+
+- feat: (new feature for the user, not a new feature for build script)
+- fix: (bug fix for the user, not a fix to a build script)
+- docs: (changes to the documentation)
+- style: (formatting, missing semi colons, etc; no production code change)
+- refactor: (refactoring production code, eg. renaming a variable)
+- test: (adding missing tests, refactoring tests; no production code change)
+- chore: (updating grunt tasks etc; no production code change)
+
+### Commit e Push
+
+```
+git add .
+git commit -m "tipo: o que foi feito"
+git push -u origin main
+```
+
+### Criar um branch a partir da branch atual
+```
+git checkout -b branch-seunome
+```
+
+### Revisão de Java
+
+[Download JDK](https://adoptium.net/)
+
+- JRE - Java Runtime Environment (java.exe)
+  - Máquina virtual do Java - interpreta o Bytecode(.class) do Java para linguagem de máquina
+- JDK - Java Development Kit (javac.exe)
+  - Compilar o código Java em bytecode (.class)
+
+### Criação de projeto no VSCode com Maven
+1) teclar F1
+2) digitar Java e escolher a opção create new java project
+3) project type: MAVEN
+4) Archetype: No Archetype
+5) pacote digitar domínio ao contrário ex: br.univille
+6) nome do projeto em minúsculo
+7) usar a pasta sugerida pelo vscode
+
+
+### Diagrama de classes
+![Diagrama de Classes](./diagramas/png/classes.png)
+
+### Criar as entidades
+```bash
+@workspace #sym:## Histórias de Usuário por favor, encontre as entidades
+```
+
+### Gerar as classes Java das entidades
+```bash
+@workspace por favor, gere no pacote br.univille.projfabsoft.entity as classes java para representar as entidades
+```
+
+### Gerar o diagrama de entidades UML
+```bash
+@workspace por favor, gere um diagrama uml utilizando o padrão plantuml para as classes no pacote br.univille.projfabsoft.entity
+```
+## Diagrama de classes Entidade (Domínio)
+![Diagrama de Entidades](./diagramas/png/diagramadeclasses.png)
+
+## Prompts Aula 08/04/2025
+- Encontrar as entidades nas histórias de usuário
+```bash
+@workspace #sym:## Histórias de Usuário quais são as entidades
+```
+- Gerar as classes java das entidades
+```bash
+@workspace por favor, crie as classe em java no pacote entity para representar as entidades
+```
+- Gerar o Diagrama de Classes de Entidade (Domínio)
+```bash
+@workspace por favor gere um diagrama uml no padrão plantuml das classes do pacote br.univille.projfabsoft
+```
+- Instalar a extensão [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
+
+## Clean Architecture
+
+[Livro Arquitetura Limpa](https://integrada.minhabiblioteca.com.br/reader/books/9788550808161/pageid/0)
+
+![Arquitetura Limpa](./diagramas/CleanArchitecture.jpg)
+
+## Frontend Angular
+
+- Criar o projeto Angular
+```bash
+ng new projfabsoft_frontend
+```
+
+- Acessar a pasta do projeto
+
+```bash
+cd projfabsoft_frontend
+```
+
+- Executar o servidor do Angular
+
+```bash
+ng serve
+```
+- Para acessar o frontend utilize o link [http://localhost:4200](http://localhost:4200)
+
+- Instalação do Bootstrap
+
+```bash
+npm install bootstrap
+```
+
+- No arquivo angular.json [🔗](./projfabsoft_frontend/angular.json)
+
+```json
+"styles": [
+    "src/styles.css",
+    "node_modules/bootstrap/dist/css/bootstrap.css"
+],
+"scripts": [
+    "node_modules/bootstrap/dist/js/bootstrap.js"
+]
+```
+
+### Gerando a primeira tela de receita 
+
+- Gerando o componente do Angular
+
+```bash
+ng generate component receita
+```
+
+- Criando a interface gráfica HTML /src/app/receita/receita.component.html [🔗](./projfabsoft_frontend/src/app/receita/receita.component.html)
+
+```html
+<main class="container">
+    <table class="table">
+        ....
+    </table>
+</main>
+```
+
+- Criando a classe Model
+
+```bash
+ng generate class model/receita
+```
+
+- Código da classe /src/app/model/receita.ts [🔗](./projfabsoft_frontend/src/app/model/receita.ts)
+
+```ts
+export class receita {
+    id: number;
+    nome: string;
+    endereco: string;
+    telefone: string;
+    email: string;
+    dataNascimento: Date;
+}
+```
+
+- Configurar o arquivo tsconfig.json [🔗](./projfabsoft_frontend/tsconfig.json) para suportar a não inicialização dos atributos 
+
+```bash
+"compilerOptions": {
+    "strictPropertyInitialization": false,
+} 
+```
+
+- Gerar o serviço
+
+```bash
+ng generate service service/receita
+```
+
+- Codigo do serviço /src/app/service/receita.service.ts [🔗](./projfabsoft_frontend/src/app/service/receita.service.ts)
+
+```ts
+import { Injectable } from '@angular/core';
+import { receita } from '../model/receita';
+import { HttpClient } from '@angular/common/http';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class receitaService {
+  apiURL = "http://localhost:8080/api/v1/receitas";
+  
+  constructor(private http:HttpClient) { }
+
+  getreceitas(){
+    return this.http.get<receita[]>(this.apiURL);
+  }
+
+}
+```
+
+- Alterar o arquivo /src/app/app.component.html [🔗](./projfabsoft_frontend/src/app/app.component.html) para gerar apenas a tela dos componentes
+
+```html
+<router-outlet />
+```
+
+- Modificar o código do componente /src/app/receita/receita.component.ts [🔗](./projfabsoft_frontend/src/app/receita/receita.component.ts) para chamar o serviço e guardar a lista de receitas em um atributo
+
+```ts
+import { Component } from '@angular/core';
+import { receita } from '../model/receita';
+import { receitaService } from '../service/receita.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-receita',
+  imports: [HttpClientModule,CommonModule],
+  templateUrl: './receita.component.html',
+  styleUrl: './receita.component.css',
+  providers: [receitaService]
+})
+export class receitaComponent {
+  listareceitas: receita[] = [];
+
+  constructor(private receitaService: receitaService) {}
+
+  ngOnInit() {
+    console.log("Carregando receitas...");
+    this.receitaService.getreceitas().subscribe(receitas => {
+      this.listareceitas = receitas;
+    });
+  }
+}
+```
+
+- Modificar o arquivo /src/app/receita/receita.component.html [🔗](./projfabsoft_frontend/src/app/receita/receita.component.html) para desenhar a tabela de receitas
+
+```html
+<main class="container">
+    <h2>receitas</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umreceita of listareceitas">
+                <td>{{umreceita.nome}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+```
+
+- Modificar o arquivo /src/app/app.routes.ts [🔗](./projfabsoft_frontend/src/app/app.routes.ts) para incluir a rota para o componente
+
+```ts
+import { Routes } from '@angular/router';
+import { receitaComponent } from './receita/receita.component';
+export const routes: Routes = [
+    { path: 'receitas', component: receitaComponent }
+];
+```
+
+- Rodar a aplicação
+
+```bash
+ng serve
+```
+
+- [Cross-origin resource sharing](https://pt.wikipedia.org/wiki/Cross-origin_resource_sharing)
+
+- No projeto Backend Java Spring Boot crie um pacote chamado br.univille.projfabsoft.config, e dentro dele uma classe WebConfig.java [🔗](./projfabsoft/src/main/java/br/univille/projfabsoft/config/WebConfig.java) com o seguinte código:
+
+
+```java
+package br.univille.projfabsoft.config;
+
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+@EnableWebMvc
+public class WebConfig implements WebMvcConfigurer  {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedHeaders("*")
+                .allowedOriginPatterns("*")
+                .allowedOrigins("*")
+                .allowedMethods("*")
+                .maxAge(1800);
+
+    }
+}
+```
+## Criação da tela de cadastro de receitas
+
+- Alterar o arquivo /src/app/receita/receita.component.ts para importar o Router e criar a função novo()
+
+```ts
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-receita',
+  imports: [HttpClientModule, CommonModule],
+  templateUrl: './receita.component.html',
+  styleUrl: './receita.component.css',
+  providers: [receitaService, Router]
+})
+
+constructor(
+    private receitaService:receitaService,
+    private router:Router
+){}
+novo(){
+  this.router.navigate(['receitas/novo']);
+}    
+```
+- Alterar o arquivo /src/app/receita/receita.component.html criar o botao para a nova tela de formulário
+
+```html
+<a (click)="novo()" class="btn btn-primary">Novo</a>
+```
+
+- Alterar o arquivo /app/app.routes.ts para registrar a rota da nova tela
+
+```ts
+import { Routes } from '@angular/router';
+import { receitaComponent } from './receita/receita.component';
+import { FormreceitaComponent } from './form-receita/form-receita.component';
+
+export const routes: Routes = [
+    { path: 'receitas', component: receitaComponent},
+    { path: 'receitas/novo', component: FormreceitaComponent},
+];
+```
+
+- Abrir o console e digitar o comando para criar um novo componente que será a tela de cadastro
+
+```bash
+ng generate component form-receita
+```
+
+- Alterar o arquivo /app/service/receita.service.ts para incluir o método de salvar o receita e chamar o endpoint POST da API
+
+```ts
+import { Injectable } from '@angular/core';
+import { receita } from '../model/receita';
+import { HttpClient } from '@angular/common/http';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class receitaService {
+  apiURL = "http://localhost:8080/api/v1/receitas";
+  
+  constructor(private http:HttpClient) { }
+
+  getreceitas(){
+    return this.http.get<receita[]>(this.apiURL);
+  }
+
+  savereceita(receita:receita){
+    return this.http.post(this.apiURL,receita);
+  }
+
+}
+``` 
+
+- Alterar o codigo do arquivo /app/form-receita/form-receita.component.ts para importar os componentes e chamar o método salvar do serviço
+
+```ts
+import { Component } from '@angular/core';
+import { receita } from '../model/receita';
+import { receitaService } from '../service/receita.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-form-receita',
+  imports: [HttpClientModule, CommonModule, FormsModule],
+  templateUrl: './form-receita.component.html',
+  styleUrl: './form-receita.component.css',
+  providers: [receitaService, Router]
+})
+export class FormreceitaComponent {
+    receita: receita = new receita();
+
+    constructor(
+      private receitaService:receitaService,
+      private router:Router
+    ){}
+
+    salvar(){
+      this.receitaService.savereceita(this.receita)
+        .subscribe(resultado => {
+            this.router.navigate(['receitas']);
+        });
+    }
+}
+```
+
+- Alterar o codigo do arquivo /app/form-receita/form-receita.component.html para desenhar a tela
+
+```ts
+<main class="container">
+    <h2>receita</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtNome">Nome</label>    
+                <input type="text" 
+                    [(ngModel)]="receita.nome"
+                    class="form-control"
+                    id="txtNome">
+            </div>
+        </div>
+        <button (click)="salvar()" 
+        class="btn btn-primary">Salvar</button>
+    </div>
+</main>
+```
+
+## Funcionalidade de ALTERAR
+
+- Modifique o controlador [receitaController](./projfabsoft/src/main/java/br/univille/projfabsoft/controller/receitaController.java) no projeto Java Spring Boot para incluir um novo endpoint para buscar um único receita pelo ID
+
+```java
+@RestController
+@RequestMapping("/api/v1/receitas")
+public class receitaController {
+
+    @GetMapping("/{id}")	
+    public ResponseEntity<receita> getreceitaId(@PathVariable Long id){
+        var receita = service.getById(id);
+
+        return new ResponseEntity<receita>(receita, HttpStatus.OK);
+    }
+```
+
+- Retorne ao projeto ANGULAR e altere o service do [receita.service.ts](./projfabsoft_frontend/src/app/service/receita.service.ts) para criar o método para buscar o receita pelo ID
+
+```ts
+  getreceitaById(id: any) {
+    return this.http.get<receita>(this.apiURL + '/' + id);
+  }
+```
+
+- Altere a tela do receita [receita.component.html](./projfabsoft_frontend/src/app/receita/receita.component.html) para incluir o botao ALTERAR na tela
+
+```html
+      <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+                <th>Data Nascimento</th>
+                <th></th> <!-- ALTERADO-->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umreceita of listareceitas">
+                <td>{{umreceita.nome}}</td>
+                <td>{{umreceita.endereco}}</td>
+                <td>{{umreceita.telefone}}</td>
+                <td>{{umreceita.email}}</td>
+                <td>{{umreceita.dataNascimento | date:'dd/MM/yyyy'}}</td>
+                <td><a (click)="alterar(umreceita)" 
+                    class="btn btn-secondary">Alterar</a></td> <!-- ALTERADO-->
+            </tr>
+        </tbody>
+    </table>
+```
+
+- Altere o controlador da tela [receita.component.ts](./projfabsoft_frontend/src/app/receita/receita.component.ts) para incluir a função alterar()
+
+```ts
+  alterar(receita:receita){
+      this.router.navigate(['receitas/alterar', receita.id]);
+  }
+```
+
+- Altere o arquivo de rotas da aplicação [app.routes.ts](./projfabsoft_frontend/src/app/app.routes.ts) para incluir a nova rota de alterar
+
+```ts
+import { Routes } from '@angular/router';
+import { receitaComponent } from './receita/receita.component';
+import { FormreceitaComponent } from './form-receita/form-receita.component';
+
+export const routes: Routes = [
+    {path: 'receitas', component: receitaComponent},
+    {path: 'receitas/novo', component: FormreceitaComponent},
+    {path: 'receitas/alterar/:id', component: FormreceitaComponent} //ALTERADO
+];
+```
+
+- Altere o controlador do formulário do receita [form-receita.component.ts](./projfabsoft_frontend/src/app/form-receita/form-receita.component.ts) para receber o id do receita, chamar o serviço do receita e mostrar em tela os dados do receita retornado pelo backend
+
+```ts
+import { Component } from '@angular/core';
+import { receita } from '../model/receita';
+import { receitaService } from '../service/receita.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router'; //ALTERADO
+
+@Component({
+  selector: 'app-form-receita',
+  imports: [HttpClientModule, CommonModule, FormsModule],
+  templateUrl: './form-receita.component.html',
+  styleUrl: './form-receita.component.css',
+  providers: [receitaService, Router]
+})
+export class FormreceitaComponent {
+    receita:receita = new receita();
+
+    constructor(
+      private receitaService: receitaService,
+      private router: Router,
+      private activeRouter: ActivatedRoute //ALTERADO
+    ) {
+        //ALTERADO
+        const id = this.activeRouter.snapshot.paramMap.get('id');
+        
+        if (id) {
+          this.receitaService.getreceitaById(id).subscribe(receita => {
+            this.receita = receita;
+        });
+        //ALTERADO
+      }
+    }
+
+    salvar(){
+      this.receitaService.savereceita(this.receita)
+          .subscribe( res => {
+            this.router.navigate(['receitas']);
+          });
+    }
+
+}
+```
+
+- Modifique o service do receita [receita.service.ts](./projfabsoft_frontend/src/app/service/receita.service.ts) para na função savereceita() verificar se a propriedade id estiver preenchida, chamar o método PUT da API.
+
+```ts
+  savereceita(receita:receita){
+    if(receita.id){
+      return this.http.put(this.apiURL + '/' + receita.id, receita);
+    }
+    return this.http.post(this.apiURL,receita);
+  }
+```
+
+## Funcionalidade de EXCLUIR
+
+-  Abrir o terminal e digitar o comando abaixo para instalar a definição de tipos do bootstrap no typescript
+
+```bash
+npm i @types/bootstrap
+```
+
+- Alterar o arquivo [receita.service.ts](./projfabsoft_frontend/src/app/service/receita.service.ts) para incluir a função de excluir receita e chamar o método delete da API no backend
+
+```ts
+excluirreceita(id: any){
+  return this.http.delete<receita>(this.apiURL + '/' + id);
+}
+```
+
+- Alterar o arquivo [receita.component.html](./projfabsoft_frontend/src/app/receita/receita.component.html) para incluir o código HTML necessário para que o bootstrap crie uma janela de confirmação (MODAL)
+
+```html
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir receita</h5>
+            </div>
+            <div class="modal-body">
+            Confirma a exclusão do receita?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+- Alterar o arquivo [receita.component.html](./projfabsoft_frontend/src/app/receita/receita.component.html) para incluir o código HTML necessário para que o botao excluir seja apresentado em cada receita
+
+```html
+<td><a (click)="alterar(umreceita)" 
+    class="btn btn-secondary">Alterar</a>
+    <!--botao excluir -->
+    <a (click)="abrirConfirmacao(umreceita)" 
+    class="btn btn-danger">Excluir</a>
+    <!--botao excluir -->
+</td>
+```
+
+
+- Alterar o arquivo [receita.component.ts](./projfabsoft_frontend/src/app/receita/receita.component.ts) para importar os seguintes objetos
+
+```ts
+// MANTER OS IMPORTS JA EXISTENTES
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import * as bootstrap from 'bootstrap';
+```
+
+- Ainda no arquivo [receita.component.ts](./projfabsoft_frontend/src/app/receita/receita.component.ts) criar duas variáveis para encontrar a referencia da janela de confirmação modal do bootstrap
+
+```ts
+@ViewChild('myModal') modalElement!: ElementRef;
+private modal!: bootstrap.Modal;
+
+private receitaSelecionado!: receita;
+```
+
+- Ainda no arquivo [receita.component.ts](./projfabsoft_frontend/src/app/receita/receita.component.ts) criar o código das funções para abrir e fechar a janela de confirmação
+
+```ts
+abrirConfirmacao(receita:receita) {
+    this.receitaSelecionado = receita;
+    this.modal = new bootstrap.Modal(this.modalElement.nativeElement);
+    this.modal.show();
+}
+
+fecharConfirmacao() {
+  this.modal.hide();
+}
+```
+
+- Ainda no arquivo [receita.component.ts](./projfabsoft_frontend/src/app/receita/receita.component.ts) criar o código da função confirmar exclusão que deverá chamar o service para excluir o registro e em caso de sucesso, fechar a janela e buscar novamente todos os receitas no backend para atualizar a tabela.
+
+```ts
+confirmarExclusao() {
+    this.receitaService.excluirreceita(this.receitaSelecionado.id).subscribe(
+        () => {
+            this.fecharConfirmacao();
+            this.receitaService.getreceitas().subscribe(
+              receitas => {
+                this.listareceitas = receitas;
+              }
+            );
+        },
+        error => {
+            console.error('Erro ao excluir receita:', error);
+        }
+    );
+}
+```
+
+## Funcionalidade de MUITOS PARA UM
+
+- Na tela de cadastro de usuarios é possível selecionar o receita que é o dono
+
+![Exemplo de Tela](./imgs/muitosparaum.png)
+
+- A entidade [usuario](./projfabsoft_frontend/src/app/model/usuario.ts) precisa ter um atributo do tipo receita
+
+```ts
+
+import { receita } from "./receita";
+
+export class usuario {
+    id: number;
+    marca: string;
+    modelo: string;
+    placa: string;
+    receita: receita
+}
+```
+
+- No controlador do formulário do usuario [form-usuario.component.ts](./projfabsoft_frontend/src/app/form-usuario/form-usuario.component.ts) importar o model receita e seu serviço
+
+```ts
+//MANTER OS OUTROS IMPORTS
+import { receita } from '../model/receita';
+import { receitaService } from '../service/receita.service';
+```
+
+- No controlador do formulário do usuario [form-usuario.component.ts](./projfabsoft_frontend/src/app/form-usuario/form-usuario.component.ts) incluir o receitaService nos providers
+
+```ts
+@Component({
+  selector: 'app-form-usuario',
+  imports: [HttpClientModule, CommonModule, FormsModule],
+  templateUrl: './form-usuario.component.html',
+  styleUrl: './form-usuario.component.css',
+  providers: [usuarioService, Router, receitaService] //ALTERAR AQUI
+})
+```
+
+- No controlador do formulário do usuario [form-usuario.component.ts](./projfabsoft_frontend/src/app/form-usuario/form-usuario.component.ts) criar uma variavel lista para guardar os receitas
+
+```ts
+export class FormusuarioComponent {
+    usuario:usuario = new usuario();
+    
+    public listareceitas:receita[] = []; //INCLUIR AQUI
+
+```
+
+- No controlador do formulário do usuario [form-usuario.component.ts](./projfabsoft_frontend/src/app/form-usuario/form-usuario.component.ts), no construtor carregar a lista de usuários chamando os serviço do receita
+
+```ts
+    constructor(
+      private usuarioService: usuarioService,
+      private receitaService: receitaService, //INCLUIR AQUI
+      private router: Router,
+      private activeRouter: ActivatedRoute
+    ) {
+        const id = this.activeRouter.snapshot.paramMap.get('id');
+        //INCLUIR AQUI
+        this.receitaService.getreceitas().subscribe(receitas: =>{
+            this.listareceitas = receitas;
+        });
+        //INCLUIR AQUI
+
+        if (id) {
+          this.usuarioService.getusuarioById(id).subscribe(usuario => {
+            this.usuario = usuario;
+          });
+        }
+    }
+
+```
+
+- No controlador do formulário do usuario [form-usuario.component.ts](./projfabsoft_frontend/src/app/form-usuario/form-usuario.component.ts), criar um novo método compararreceitas para ensinar o Angular a comparar dois objetos receita. Necessário para que o select funcione.
+
+```ts
+  comparareceitas(obj1: receita, obj2: receita): boolean {
+    return obj1 && obj2 ? obj1.id === obj2.id : obj1 === obj2;
+  }
+```
+
+- Na tela de formulário do usuario [form-usuario.component.html](./projfabsoft_frontend/src/app/form-usuario/form-usuario.component.html) incluir o campo select para listar os receitas em tela.
+
+```html
+<div class="form-group">
+    <label for="txtreceita">receita</label>
+    <select id="txtreceita" [(ngModel)]="usuario.receita" class="form-select" [compareWith]="comparareceitas">
+        <option *ngFor="let umreceita of listareceitas" [ngValue]="umreceita">{{ umreceita.nome }}</option>
+    </select>
+</div>
+```
+
+## Funcionalidade de UM PARA MUITOS - Cadastro Pai/Filho
+
+- No projeto Angular, criar as classes Model para cada uma das entidades do Java envolvidas na tela.
+
+```ts
+export class Peca {
+    id: number;
+    codigo: string;
+    nome: string;
+    precoUnitario: number;
+}
+```
+
+
+```ts
+export class Servico {
+    id: number;
+    nomeFuncionario: string;
+    quantidadeHoras: number;
+    valor: number;
+}
+```
+
+```ts
+import { receita } from "./receita";
+import { Peca } from "./peca";
+import { Servico } from "./servico";
+
+export class Revisao {
+    id: number;
+    receita: receita;
+    dataEntrada: Date;
+    dataSaida: Date;
+    valor: number;
+    pecasTrocadas: Peca[];
+    servicosRealizados: Servico[];
+}
+```
+
+ - Criar a classe de serviço apenas para a entidade principal da tela, neste caso a Revisão. Por que? Porquê as instâncias das classes Peça e Serviço serão salvas junto com a Revisão.
+
+```bash
+ng generate service service/revisao
+```
+
+```ts
+import { Injectable } from '@angular/core';
+import { Revisao } from '../model/revisao';
+import { Peca } from '../model/peca';
+import { Servico } from '../model/servico';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class RevisaoService {
+
+  apiURL = "http://localhost:8080/api/v1/revisoes";
+
+  constructor(private http:HttpClient) { }
+
+  getRevisoes(){
+     return this.http.get<Revisao[]>(this.apiURL);
+  }
+  getRevisaoById(id: any) {
+    return this.http.get<Revisao>(this.apiURL + '/' + id);
+  }
+  saveRevisao(revisao:Revisao){
+    if(revisao.id){
+      return this.http.put(this.apiURL + '/' + revisao.id, revisao);
+    }
+    return this.http.post(this.apiURL,revisao);
+  }
+
+  excluirRevisao(id: any){
+    return this.http.delete<Revisao>(this.apiURL + '/' + id);
+  }
+}
+```
+
+- Construir o componente da tela principal da revisão.
+
+```bash
+ng generate component revisao
+```
+
+- Registar o componente no arquivo [app.routes.ts](./projfabsoft_frontend/src/app/app.routes.ts)
+
+```ts
+import { Routes } from '@angular/router';
+import { receitaComponent } from './receita/receita.component';
+import { FormreceitaComponent } from './form-receita/form-receita.component';
+import { usuarioComponent } from './usuario/usuario.component';
+import { FormusuarioComponent } from './form-usuario/form-usuario.component';
+import { RevisaoComponent } from './revisao/revisao.component';
+
+export const routes: Routes = [
+    {path: 'receitas', component: receitaComponent},
+    {path: 'receitas/novo', component: FormreceitaComponent},
+    {path: 'receitas/alterar/:id', component: FormreceitaComponent},
+
+    {path: 'usuarios', component: usuarioComponent},
+    {path: 'usuarios/novo', component: FormusuarioComponent},
+    {path: 'usuarios/alterar/:id', component: FormusuarioComponent},
+
+    {path: 'revisoes', component: RevisaoComponent} //ALTERAR AQUI
+
+];
+```
+
+- Criar o código html do componente [revisao.component.ts](./projfabsoft_frontend/src/app/revisao/revisao.component.html)
+
+```html
+<main class="container">
+    <h2>Revisões</h2>
+    <a (click)="novo()" class="btn btn-primary">Novo</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Data Entrada</th>
+                <th>Data Saída</th>
+                <th>receita</th>
+                <th>Valor</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umaRevisao of listaRevisoes">
+                <td>{{umaRevisao.dataEntrada | date:'dd/MM/yyyy'}}</td>
+                <td>{{umaRevisao.dataSaida | date:'dd/MM/yyyy'}}</td>
+                <td>{{umaRevisao.receita !== null ? umaRevisao.receita.nome : ''}}</td>
+                <td>{{umaRevisao.valor}}</td>
+                <td><a (click)="alterar(umaRevisao)" 
+                    class="btn btn-secondary">Alterar</a>
+                    &nbsp;
+                    <a (click)="abrirConfirmacao(umaRevisao)" 
+                        class="btn btn-danger">Excluir</a>
+                
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir Revisão</h5>
+            </div>
+            <div class="modal-body">
+            Confirma a exclusão da Revisão?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+- Criar o código do controlador [revisao.component.ts](./projfabsoft_frontend/src/app/revisao/revisao.component.ts) similar ao cadastro simples
+
+```ts
+import { Component,ElementRef, ViewChild } from '@angular/core';
+import { Revisao } from '../model/revisao';
+import { RevisaoService } from '../service/revisao.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import * as bootstrap from 'bootstrap';
+
+@Component({
+  selector: 'app-revisao',
+  imports: [HttpClientModule, CommonModule],
+  templateUrl: './revisao.component.html',
+  styleUrl: './revisao.component.css',
+  providers: [RevisaoService, Router]
+})
+export class RevisaoComponent {
+    public listaRevisoes:Revisao[] = [];
+
+    @ViewChild('myModal') modalElement!: ElementRef;
+    private modal!: bootstrap.Modal;
+
+    private revisaoSelecionada!: Revisao;
+        
+    constructor(
+      private revisaoService:RevisaoService,
+      private router:Router
+    ){}
+
+    ngOnInit(): void {
+      this.revisaoService.getRevisoes().subscribe(resposta => {
+          this.listaRevisoes = resposta;
+      })
+    }
+    novo(){
+      this.router.navigate(['revisoes/novo']);
+    }
+    alterar(revisao:Revisao){
+      this.router.navigate(['revisoes/alterar', revisao.id]);
+    }
+
+    abrirConfirmacao(revisao:Revisao) {
+        this.revisaoSelecionada = revisao;
+        this.modal = new bootstrap.Modal(this.modalElement.nativeElement);
+        this.modal.show();
+    }
+
+    fecharConfirmacao() {
+      this.modal.hide();
+    }
+
+
+    confirmarExclusao() {
+        this.revisaoService.excluirRevisao(this.revisaoSelecionada.id).subscribe(
+            () => {
+                this.fecharConfirmacao();
+                this.revisaoService.getRevisoes().subscribe(
+                  revisoes => {
+                    this.listaRevisoes = revisoes;
+                  }
+                );
+            },
+            error => {
+                console.error('Erro ao excluir revisão:', error);
+            }
+        );
+    }
+}
+```
+
+- Crie o componente para o formulário da tela de revisão
+
+```bash
+ng generate component form-revisao
+```
+
+- Registre as rotas no arquivo [app.routes.ts](./projfabsoft_frontend/src/app/app.routes.ts)
+
+```ts
+import { Routes } from '@angular/router';
+import { receitaComponent } from './receita/receita.component';
+import { FormreceitaComponent } from './form-receita/form-receita.component';
+import { usuarioComponent } from './usuario/usuario.component';
+import { FormusuarioComponent } from './form-usuario/form-usuario.component';
+import { RevisaoComponent } from './revisao/revisao.component';
+import { FormRevisaoComponent } from './form-revisao/form-revisao.component';
+
+export const routes: Routes = [
+    {path: 'receitas', component: receitaComponent},
+    {path: 'receitas/novo', component: FormreceitaComponent},
+    {path: 'receitas/alterar/:id', component: FormreceitaComponent},
+
+    {path: 'usuarios', component: usuarioComponent},
+    {path: 'usuarios/novo', component: FormusuarioComponent},
+    {path: 'usuarios/alterar/:id', component: FormusuarioComponent},
+
+    {path: 'revisoes', component: RevisaoComponent},
+    {path: 'revisoes/novo', component: FormRevisaoComponent}, //ALTERACAO AQUI
+    {path: 'revisoes/alterar/:id', component: FormRevisaoComponent} //ALTERACAO AQUI
+
+];
+```
+
+- Implemete o formulário da Revisão [form-revisao.component.html](./projfabsoft_frontend/src/app/form-revisao/form-revisao.component.html) apenas com os atributos de tipos primitivos, as associações vamos fazer em seguida:
+
+
+```html<main class="container">
+    <h2>Revisão</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtDataEntrada">Data Entrada</label>
+                <input type="date" [(ngModel)]="revisao.dataEntrada" 
+                class="form-control" id="txtDataEntrada">
+            </div>
+
+            <div class="form-group">
+                <label for="txtDataSaida">Data Saída</label>
+                <input type="date" [(ngModel)]="revisao.dataSaida" 
+                class="form-control" id="txtDataSaida">
+            </div>
+
+            <div class="form-group">
+                <label for="txtValor">Valor</label>
+                <input type="number" [(ngModel)]="revisao.valor" 
+                class="form-control" id="txtValor">
+            </div>
+
+            
+        </div>
+
+        <button (click)="salvar()"
+            class="btn btn-primary">Salvar</button>
+
+    </div>
+</main>
+```
+
+-  Implemente o controlador do formulário [form-revisao.component.ts](./projfabsoft_frontend/src/app/form-revisao/form-revisao.component.ts) de Revisão idêntico ao controlador do cadastro simples.
+
+```ts
+import { Component } from '@angular/core';
+import { Revisao } from '../model/revisao';
+import { RevisaoService } from '../service/revisao.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
+@Component({
+  selector: 'app-form-revisao',
+  imports: [HttpClientModule, CommonModule, FormsModule],
+  templateUrl: './form-revisao.component.html',
+  styleUrl: './form-revisao.component.css',
+  providers: [RevisaoService, Router]
+})
+
+export class FormRevisaoComponent {
+    revisao:Revisao = new Revisao();
+
+    constructor(
+      private revisaoService: RevisaoService,
+      private router: Router,
+      private activeRouter: ActivatedRoute
+    ) {
+        const id = this.activeRouter.snapshot.paramMap.get('id');
+        
+        if (id) {
+          this.revisaoService.getRevisaoById(id).subscribe(revisao => {
+            this.revisao = revisao;
+        });
+      }
+    }
+
+    salvar(){
+      this.revisaoService.saveRevisao(this.revisao)
+          .subscribe( res => {
+            this.router.navigate(['revisoes']);
+          });
+    }
+}
+```
+
+- IMPORTANTE: faça o teste da sua aplicação neste ponto e garanta que o seu cadastro esta funcionando
+
+### Inclusão do campo de seleção dos receitas
+
+- Alterar o controlador do formulário da Revisão [form-revisao.component.ts](./projfabsoft_frontend/src/app/form-revisao/form-revisao.component.ts) para chamar o serviço do receita para buscar a lista de receitas que irá preencher o campo de seleção de receitas no formulário
+
+```ts
+import { Component,ElementRef, ViewChild } from '@angular/core';
+import { Revisao } from '../model/revisao';
+import { RevisaoService } from '../service/revisao.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
+import { receita } from '../model/receita'; //ALTERAR AQUI
+import { receitaService } from '../service/receita.service'; //ALTERAR AQUI
+
+@Component({
+  selector: 'app-form-revisao',
+  imports: [HttpClientModule, CommonModule, FormsModule],
+  templateUrl: './form-revisao.component.html',
+  styleUrl: './form-revisao.component.css',
+  providers: [RevisaoService, Router, receitaService] //ALTERAR AQUI
+})
+
+export class FormRevisaoComponent {
+    revisao:Revisao = new Revisao();
+
+    public listareceitas:receita[] = []; //ALTERAR AQUI
+
+    constructor(
+      private revisaoService: RevisaoService,
+      private router: Router,
+      private receitaService: receitaService, //ALTERAR AQUI
+      private activeRouter: ActivatedRoute
+    ) {
+        const id = this.activeRouter.snapshot.paramMap.get('id');
+        
+        //ALTERAR AQUI
+        this.receitaService.getreceitas().subscribe(receitas =>{
+            this.listareceitas = receitas;
+        });
+        //ALTERAR AQUI
+
+        if (id) {
+          this.revisaoService.getRevisaoById(id).subscribe(revisao => {
+            this.revisao = revisao;
+        });
+      }
+    }
+
+    salvar(){
+      this.revisaoService.saveRevisao(this.revisao)
+          .subscribe( res => {
+            this.router.navigate(['revisoes']);
+          });
+    }
+
+    //ALTERAR AQUI
+    comparareceitas(obj1: receita, obj2: receita): boolean {
+      return obj1 && obj2 ? obj1.id === obj2.id : obj1 === obj2;
+    }
+    //ALTERAR AQUI
+}
+```
+
+- Alterar o codigo HTML do componente Form da revisão [form-revisao.component.html](./projfabsoft_frontend/src/app/form-revisao/form-revisao.component.html) para incluir o campo de seleção de receitas no formulário
+
+```html
+<main class="container">
+    <h2>Revisão</h2>
+    <div class="card">
+        <div class="card-body">
+            
+            <!-- ALTERAR AQUI -->
+            <div class="form-group">
+                <label for="txtreceita">receita</label>
+                <select id="txtreceita" [(ngModel)]="revisao.receita" class="form-select" [compareWith]="comparareceitas">
+                    <option *ngFor="let umreceita of listareceitas" [ngValue]="umreceita">{{ umreceita.nome }}</option>
+                </select>
+            </div>
+            <!-- ALTERAR AQUI -->
+
+            <div class="form-group">
+                <label for="txtDataEntrada">Data Entrada</label>
+                <input type="date" [(ngModel)]="revisao.dataEntrada" 
+                class="form-control" id="txtDataEntrada">
+            </div>
+
+            <div class="form-group">
+                <label for="txtDataSaida">Data Saída</label>
+                <input type="date" [(ngModel)]="revisao.dataSaida" 
+                class="form-control" id="txtDataSaida">
+            </div>
+
+            <div class="form-group">
+                <label for="txtValor">Valor</label>
+                <input type="number" [(ngModel)]="revisao.valor" 
+                class="form-control" id="txtValor">
+            </div>
+
+            
+        </div>
+
+        <button (click)="salvar()"
+            class="btn btn-primary">Salvar</button>
+
+    </div>
+</main>
+```
+
+### Inclusão das entidades Filho no cadastro Pai-Filhos - Model Peças
+
+- Alterar o HTML formulário da Revisão [form-revisao.component.ts](./projfabsoft_frontend/src/app/form-revisao/form-revisao.component.html) para incluir uma tabela do HTML para listar todas as peças de uma revisão
+
+```html
+    
+    <div class="form-group">
+        <label for="txtValor">Valor</label>
+        <input type="number" [(ngModel)]="revisao.valor" 
+        class="form-control" id="txtValor">
+    </div>
+    <!-- INICIO DA ALTERACAO -->
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Peças</h5>
+            <a (click)="incluirPeca()" 
+                class="btn btn-secondary">Incluir Peça</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Preço Unitário</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let umaPeca of revisao.pecasTrocadas">
+                        <td>{{umaPeca.codigo}}</td>
+                        <td>{{umaPeca.nome}}</td>
+                        <td>{{umaPeca.precoUnitario}}</td>
+                        <td>
+                            <a (click)="excluirPeca(umaPeca)" 
+                                class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- FIM DA ALTERACAO -->
+</div>
+
+<button (click)="salvar()"
+    class="btn btn-primary">Salvar</button>
+```
+
+- Alterar o HTML formulário da Revisão [form-revisao.component.ts](./projfabsoft_frontend/src/app/form-revisao/form-revisao.component.html) para incluir uma janela modal, que será o formulário de inclusão da peça. IMPORTANTE: incluir este código no final do arquivo
+
+```html
+<div class="modal fade" #myModalPeca tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nova Peça</h5>
+            </div>
+            <div class="form-group">
+                <label for="txtPecaCodigo">Código</label>
+                <input type="text" [(ngModel)]="peca.codigo" 
+                    class="form-control" id="txtPecaCodigo">
+            </div>
+            <div class="form-group">
+                <label for="txtPecaNome">Nome</label>
+                <input type="text" [(ngModel)]="peca.nome" 
+                    class="form-control" id="txtPecaNome">
+            </div>
+            <div class="form-group">
+                <label for="txtPecaPrecoUnitario">Preço Unitário</label>
+                <input type="number" [(ngModel)]="peca.precoUnitario" 
+                    class="form-control" id="txtPecaPrecoUnitario">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="fecharConfirmacaoPeca()">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="salvaPeca()">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+```
+- Alterar o arquivo controller do component form Revisao [form-revisao.component.ts](./projfabsoft_frontend/src/app/form-revisao/form-revisao.component.ts) para incluir os imports e uma variável que guardará os dados da nova peça digitada
+
+```ts
+import { receita } from '../model/receita';
+import { receitaService } from '../service/receita.service';
+
+import { Peca } from '../model/peca'; //ALTERAR AQUI!!!
+import * as bootstrap from 'bootstrap'; //ALTERAR AQUI!!!
+
+@Component({
+  selector: 'app-form-revisao',
+``` 
+
+```ts
+revisao:Revisao = new Revisao();
+
+peca:Peca = new Peca(); //ALTERAR AQUI!!!
+@ViewChild('myModalPeca') modalElementPeca!: ElementRef; //ALTERAR AQUI!!!
+private modalPeca!: bootstrap.Modal; //ALTERAR AQUI!!!
+
+public listareceitas:receita[] = [];
+```
+
+- Alterar o arquivo controller do component form Revisao [form-revisao.component.ts](./projfabsoft_frontend/src/app/form-revisao/form-revisao.component.ts) para criar o codigo da função incluirPeca que deverá abrir o modal de cadastro, salvarPeca que deverá incluir a nova peça na lista de itens e excluirPeca que deverá remover a peça da lista.
+
+```ts
+incluirPeca():void{
+  this.peca = new Peca();
+  this.modalPeca = new bootstrap.Modal(this.modalElementPeca.nativeElement);
+  this.modalPeca.show();
+}
+salvaPeca():void{
+  if(this.revisao.pecasTrocadas == null){
+      this.revisao.pecasTrocadas = [];
+  }
+  this.revisao.pecasTrocadas.push(this.peca);
+  this.modalPeca.hide();
+}
+fecharConfirmacaoPeca():void{
+  this.modalPeca.hide();
+}
+
+excluirPeca(peca: Peca): void{
+  this.revisao.pecasTrocadas = 
+    this.revisao.pecasTrocadas.filter((p) => p.id !== peca.id);
+}
+```
+
+## Publicação da Aplicação
+
+### Java / Spring Boot
+
+- Alterar o arquivo [pom.xml](./projfabsoft/pom.xml) para incluir a dependência da biblioteca do SQL Server
+
+```xml
+<dependency>
+  <groupId>com.microsoft.sqlserver</groupId>
+  <artifactId>mssql-jdbc</artifactId>
+  <scope>runtime</scope>
+</dependency>
+```
+
+- Criar um novo arquivo na pasta [/src/main/resources/application-prod.properties](./projfabsoft/src/main/resources/application-prod.properties) com as configuracões para conectar no banco do Microsft SQL Server lindo ❤️
+
+```json
+spring.application.name=projfabsoft
+
+spring.jpa.database-platform=org.hibernate.dialect.SQLServerDialect
+spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring.datasource.url=${DB_CONNECTION_STRING}
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
+spring.jpa.hibernate.ddl-auto=update
+```
+
+### Angular
+
+- Criar na raiz do projeto [projfabsoft_frontend/Dockerfile](./projfabsoft_frontend/Dockerfile) para fazer o build da aplicação front-end no formato de um container Docker
+
+- IMPORTANTE: substituir dentro do arquivo projfabsoft_frontend pelo nome da pasta do seu projeto,
+caso seja diferente
+
+```docker
+# Stage 1: Build
+FROM node:18 AS build
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package.json package-lock.json ./
+
+RUN npm install -g @angular/cli
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Build the Angular application
+RUN ng build
+
+# Stage 2: Production
+FROM nginx:alpine AS production
+
+# Set working directory
+WORKDIR /usr/share/nginx/html
+
+# Copy built files from the previous stage
+COPY --from=build /app/dist/projfabsoft_frontend/browser /usr/share/nginx/html
+
+# Copiar o arquivo environment.runtime.js
+COPY src/assets/environment.runtime.js /usr/share/nginx/html/assets/environment.runtime.js
+
+# Custom Nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx server and execute sed command
+CMD ["/bin/sh", "-c", "sed -i 's|http://localhost:8080/api/v1|'\"$API_URL\"'|g' /usr/share/nginx/html/assets/environment.runtime.js && nginx -g 'daemon off;'"]
+```
+
+- Criar na pasta do projeto front-end um arquivo novo com o nome [default.conf](./projfabsoft_frontend/nginx.conf) contendo o seguite código
+
+```bash
+server {
+    server_name my-app;
+
+    root /usr/share/nginx/html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+```
+
+
+- Criar dentro da pasta do projeto front-end um novo arquivo na pasta [/src/assets/environment.runtime.js](./projfabsoft_frontend/src/assets/environment.runtime.js) com o seguinte codigo
+
+```js
+window.env = {
+  apiUrl: 'http://localhost:8080/api/v1' // Valor padrão
+};
+```
+
+- Modificar todos os arquivos arquivos SERVICE de seu projeto para trocar a URL padrão da API back-end conforme exemplo
+
+```ts
+apiBase = (window as any).env.apiUrl;
+apiURL = (this.apiBase !== null ? this.apiBase : 'http://localhost:8080/api/v1/usuarios') + "/usuarios";
+```
+
+- Modificar o arquivo [angular.json](./projfabsoft_frontend/angular.json) para servir o arquivo dentro da pasta /src/assets
+
+```json
+"assets": [
+  {
+    "glob": "**/*",
+    "input": "public"
+  },
+  {
+    "glob": "**/*",
+    "input": "src/assets/",
+    "output": "assets"
+  }
+],
+``` 
+
+### Github Actions
+
+- Modificar o arquivo .github/workflows/buildbackend.yml para fazer o build do container Docker do projeto Angular front-end
+
+```yml
+      # Build and push Docker image to GitHub Container Registry
+      - name: Build and Push Docker Image
+        run: |
+          docker build -t ghcr.io/${{ github.repository }}/projfabsoft:latest ./projfabsoft
+          docker push ghcr.io/${{ github.repository }}/projfabsoft:latest
+          docker build -t ghcr.io/${{ github.repository }}/projfabsoft-frontend:latest ./projfabsoft_frontend
+          docker push ghcr.io/${{ github.repository }}/projfabsoft-frontend:latest
+```
+- Fazer o commit e push da aplicação na branch main
+
+### Azure lindo ❤️
+
+- Criar uma instância do Azure SQL utilizando a oferta gratuita
+- Criar uma instância do Azure Web App no free tier para servir o back-end em Java, informando as seguintes variáveis de ambiente
+
+```bash
+SPRING_PROFILES_ACTIVE=prod
+DB_CONNECTION_STRING
+DB_USERNAME
+DB_PASSWORD
+```
+
+- Criar uma segunda instância do Azure Web App, selecionando o mesmo Service Plan criado no free tier no passo anterior, para servir o front-end em angular e informando a seguinte variável de ambiente
+
+```bash
+API_URL=https://<ENDERECO DO WEB APP DO BACKEND>/api/v1
+```
+
+## Gráficos
+
+- Instalar os pacotes
+
+```bash
+npm install ng2-charts --legacy-peer-deps
+npm install chart.js --legacy-peer-deps
+```
+- Documentação da biblioteca [https://github.com/valor-software/ng2-charts?tab=readme-ov-file](https://github.com/valor-software/ng2-charts?tab=readme-ov-file)
+
+- No HTML do componente incluir o tag canvas apontando para as variáveis que contem os dados do gráfico
+
+```html
+<canvas baseChart
+                [datasets]="chartData.datasets"
+                [labels]="chartData.labels"
+                [options]="chartOptions"
+                [legend]="true"
+                [type]="'bar'">
+        </canvas>
+```
+
+- No arquivo controller do componente, importas as bibliotecas do componente, e depois criar uma instância da classe ChartConfiguration com os dados a serem plotados
+
+```ts
+import { Component } from '@angular/core';
+import { ChartConfiguration, ChartOptions } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts'; //ALTERAR AQUI
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts'; //ALTERAR AQUI
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css',
+  imports: [BaseChartDirective], //ALTERAR AQUI
+  providers: [provideCharts(withDefaultRegisterables())] //ALTERAR AQUI
+})
+export class HomeComponent {
+  //ALTERAR AQUI
+  public chartData: ChartConfiguration['data'] = {
+    labels: ['Janeiro', 'Fevereiro', 'Março'],
+    datasets: [
+      { data: [65, 59, 80], label: 'Vendas' },
+      { data: [165, 159, 180], label: 'Pedidos' }
+    ],
+  };
+
+  public chartOptions: ChartOptions = {
+    responsive: true,
+  };
+  //ALTERAR AQUI
+}
+```
+
+## Implementação de um CHAT com WebSocket
+
+### Java / Spring Boot
+
+- Alterar o arquivo [pom.xml](./projfabsoft/pom.xml) para incluir a dependência
+
+```bash
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-websocket</artifactId>
+</dependency>
+```
+
+- Criar um novo arquivo na pasta [java/br/univille/projfabsoft/config/WebSocketConfig.java](./projfabsoft/src/main/java/br/univille/projfabsoft/config/WebSocketConfig.java) com o seguinte código
+
+```java
+package br.univille.projfabsoft.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
+import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
+import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
+import br.univille.projfabsoft.controller.ChatController;
+
+@Configuration
+@EnableWebSocket
+public class WebSocketConfig implements WebSocketConfigurer {
+
+    @Override
+    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+        registry.addHandler(new ChatController(), "/ws/chat").setAllowedOrigins("*");
+    }
+}
+```
+
+- Criar um novo arquivo na pasta [java/br/univille/projfabsoft/controller/ChatController.java](./projfabsoft/src/main/java/br/univille/projfabsoft/controller/ChatController.java) que será o servidor para que os receitas se conectem para enviar e receber mensagens.
+
+
+```java
+package br.univille.projfabsoft.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.socket.TextMessage;
+import org.springframework.web.socket.WebSocketSession;
+import org.springframework.web.socket.handler.TextWebSocketHandler;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
+@Controller
+@RequestMapping("/ws/chat")
+public class ChatController extends TextWebSocketHandler {
+
+    private final Set<WebSocketSession> sessions = Collections.synchronizedSet(new HashSet<>());
+
+    @Override
+    public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+        sessions.add(session);
+    }
+
+    @Override
+    public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
+        System.out.println("Received message: " + message.getPayload());
+        synchronized (sessions) {
+            for (WebSocketSession webSocketSession : sessions) {
+                if (webSocketSession.isOpen()) {
+                    if(webSocketSession.getId().equals(session.getId())) {
+                        continue;
+                    }
+                    webSocketSession.sendMessage(new TextMessage(message.getPayload()));
+                }
+            }
+        }
+    }
+
+    @Override
+    public void afterConnectionClosed(WebSocketSession session, org.springframework.web.socket.CloseStatus status) throws Exception {
+        sessions.remove(session);
+    }
+}
+```
+
+### Typescript / Angular
+
+- Criar um novo arquivo chamado [chat.service.ts](./projfabsoft_frontend/src/app/service/chat.service.ts) para conectar no servidor WebSocket do back-end.
+
+```ts
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ChatService {
+  private socket!: WebSocket;
+  private messageCallback!: (message: string) => void;
+
+  apiBase = (window as any).env.apiUrl.replace('/api/v1','').replace('https://','').replace('http://','');
+  apiURL = (this.apiBase !== null ? ('wss://' + this.apiBase) : 'ws://localhost:8080') + "/ws/chat";
+  
+  constructor() { }
+
+  connect(): void {
+    this.socket = new WebSocket(this.apiURL);
+
+    this.socket.onopen = () => {
+      console.log('WebSocket connection established.');
+    };
+
+    this.socket.onmessage = (event) => {
+      console.log('Message received from server:', event.data);
+      if (this.messageCallback) {
+        this.messageCallback(event.data);
+      }
+    };
+
+    this.socket.onclose = () => {
+      console.log('WebSocket connection closed.');
+    };
+
+    this.socket.onerror = (error) => {
+      console.error('WebSocket error:', error);
+    };
+  }
+
+  onMessage(callback: (message: string) => void): void {
+    this.messageCallback = callback;
+  }
+
+  sendMessage(message: string): void {
+    if (this.socket && this.socket.readyState === WebSocket.OPEN) {
+      this.socket.send(message);
+    } else {
+      console.error('WebSocket is not open. Unable to send message.');
+    }
+  }
+
+  disconnect(): void {
+    if (this.socket) {
+      this.socket.close();
+    }
+  }
+}
+```
+
+- Criar um novo componente chamado chat
+
+- Código da interface gráfica do component [chat.component.html](./projfabsoft_frontend/src/app/chat/chat.component.html)
+
+```html
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">Chat</h5>
+    </div>
+    <div class="card-body" style="height: 400px; overflow-y: auto;" #chatContainer>
+      
+      
+    </div>
+    <div class="card-footer">
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="textoMensagem" 
+               placeholder="Digite sua mensagem..." 
+               (keyup.enter)="clickEnviar()" />
+        <button class="btn btn-primary" type="button" (click)="clickEnviar()">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div #suaMensagem class="d-flex justify-content-end mb-3 d-none">
+    <div class="me-3">
+        <div class="p-2 bg-primary text-white rounded msg"></div>
+    </div>
+    <div>
+        <span class="badge bg-secondary">Você</span>
+    </div>
+</div>
+
+<div #userMensagem class="d-flex mb-3 d-none">
+    <div class="me-3">
+        <span class="badge bg-secondary">User 1</span>
+    </div>
+    <div class="flex-grow-1">
+        <div class="p-2 bg-light rounded msg"></div>
+    </div>
+</div>
+```
+
+- Código do controlador do component [chat.component.ts](./projfabsoft_frontend/src/app/chat/chat.component.ts) para controlar a interface para envio das mensagens e para atualizar a interface ao receber uma mensagem
+
+```ts
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ChatService } from '../service/chat.service';
+
+@Component({
+  selector: 'app-chat',
+  imports: [FormsModule],
+  templateUrl: './chat.component.html',
+  styleUrl: './chat.component.css',
+  providers: [ChatService]
+})
+export class ChatComponent implements OnInit {
+    dynamicContent: string = '';
+    textoMensagem: string = '';
+
+    @ViewChild('suaMensagem') htmlSuaMensagem!: ElementRef;
+    @ViewChild('userMensagem') htmlUserMensagem!: ElementRef;
+    @ViewChild('chatContainer') chatContainer!: ElementRef;
+
+    constructor(private chatService: ChatService) {}
+
+    ngOnInit(): void {
+        // Conecta ao WebSocket e registra o callback para receber mensagens
+        this.chatService.connect();
+        this.chatService.onMessage((msg: string) => {
+            this.receberMensagem(msg);
+        });
+    }
+
+    clickEnviar() {
+        const mensagem = this.htmlSuaMensagem.nativeElement.cloneNode(true);
+        mensagem.classList.remove('d-none');
+        mensagem.querySelector('.msg').textContent = this.textoMensagem;
+        this.chatContainer.nativeElement.appendChild(mensagem);
+
+        // Envia a mensagem pelo serviço do chat
+        this.chatService.sendMessage(this.textoMensagem);
+
+        this.textoMensagem = '';
+        this.scrollToBottom();
+    }
+
+    receberMensagem(msg: string) {
+        const mensagem = this.htmlUserMensagem.nativeElement.cloneNode(true);
+        mensagem.classList.remove('d-none');
+        mensagem.querySelector('.msg').textContent = msg;
+        this.chatContainer.nativeElement.appendChild(mensagem);
+        this.scrollToBottom();
+    }
+
+    private scrollToBottom(): void {
+        const container = this.chatContainer.nativeElement;
+        container.scrollTop = container.scrollHeight;
+    }
+}
+
+```
+
+## Implementação UPLOAD de imagens
+
+- IMPORTANTE: esse exemplo de UPLOAD de imagem não é a solução ótima principalmente considerando a execução do software em ambiente de nuvem, há necessidade de integrar com um object storage.
+
+### Java / Spring Boot
+
+- Altera o arquivo de entidade para incluir os seguintes atributos [usuario.java](./projfabsoft/src/main/java/br/univille/projfabsoft/entity/usuario.java)
+
+```java
+    @Transient
+    private String foto;
+    
+    private String arquivoFoto;
+    private String mimeType;
+
+    public String getMimeType() {
+        return mimeType;
+    }
+
+    public void setMimeType(String mimeType) {
+        this.mimeType = mimeType;
+    }
+
+    public String getArquivoFoto() {
+        return arquivoFoto;
+    }
+
+    public void setArquivoFoto(String arquivoFoto) {
+        this.arquivoFoto = arquivoFoto;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+```
+
+- Alterar o codigo da implementação do Serviço para que possa salvar os arquivos de imagem no disco do servidor e carregar o arquivo do disco do servidor [usuarioServiceImpl.java](./projfabsoft/src/main/java/br/univille/projfabsoft/service/impl/usuarioServiceImpl.java)
+
+```java
+    @Value("${fabrica2025.tempfolder}")
+    private String tempFolder;
+    private Path root = null;
+
+    private void saveFoto(usuario usuario){
+
+        if(usuario.getFoto() == null || usuario.getFoto().equals("")){
+            return;
+        }
+
+        if (!usuario.getMimeType().startsWith("image/")) {
+            return;
+        }
+
+        byte[] imageBytes = Base64.getDecoder().decode(usuario.getFoto());
+        InputStream imageStream = new ByteArrayInputStream(imageBytes);
+
+        File dir = new File(tempFolder);
+        if (! dir.exists()){
+            dir.mkdir();
+        }
+
+        root = Paths.get(tempFolder);
+        UUID uuid = UUID.randomUUID();
+        String novoNome = String.format("%s.%s", uuid.toString(), usuario.getArquivoFoto().split("\\.")[1]);
+        Path nomeArquivo = this.root.resolve(novoNome);
+        try {
+            Files.copy(imageStream, nomeArquivo);
+        } catch (Exception e) {
+            throw new RuntimeException("Não foi possível salvar o arquivo. Error: " + e.getMessage());
+        }
+        usuario.setArquivoFoto(nomeArquivo.toAbsolutePath().toString());
+    }
+
+    private usuario carregaFoto(usuario usuario){
+        if(usuario.getArquivoFoto() == null || usuario.getArquivoFoto().equals("")){
+            return usuario;
+        }
+
+        File file = new File(usuario.getArquivoFoto());
+        if(!file.exists()){
+            return usuario;
+        }
+
+        try {
+            byte[] imageBytes = Files.readAllBytes(file.toPath());
+            String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+            usuario.setFoto(base64Image);
+        } catch (Exception e) {
+            throw new RuntimeException("Não foi possível carregar a foto. Error: " + e.getMessage());
+        }
+        
+        return usuario;
+    }
+```
+
+- Alterar o codigo da implementação do mesmo Serviço [usuarioServiceImpl.java](./projfabsoft/src/main/java/br/univille/projfabsoft/service/impl/usuarioServiceImpl.java) que o método save, chame o método para salvar a foto
+
+```java
+    @Override
+    public usuario save(usuario usuario) {
+        saveFoto(usuario);
+        repository.save(usuario);
+        return usuario;
+    }
+```
+
+- Alterar o codigo da implementação do mesmo Serviço [usuarioServiceImpl.java](./projfabsoft/src/main/java/br/univille/projfabsoft/service/impl/usuarioServiceImpl.java) que os métodos que fazem busca no banco de dados, possam carregar o arquivo da foto
+
+```java
+    @Override
+    public List<usuario> getAll() {
+        var listausuarios = repository.findAll();
+        listausuarios.stream()
+            .filter(usuario -> usuario.getArquivoFoto() != null && !usuario.getArquivoFoto().isEmpty())
+            .forEach(this::carregaFoto);
+        return repository.findAll();
+    }
+
+    @Override
+    public usuario getById(Long id) {
+        var retorno = repository.findById(id);
+        if(retorno.isPresent()){
+            var umusuario = retorno.get();
+            carregaFoto(umusuario);
+            return umusuario;
+        }
+        return null;
+    }
+```
+
+- Alterar o arquivo [application.properties](./projfabsoft/src/main/resources/application.properties) para incluir uma variável que aponte para a pasta no servidor onde os arquivos de imagem serão salvos
+
+```bash
+fabrica2025.tempfolder=\\tmp\\images
+```
+
+### Typescript / Angular
+
+- Alterar o arquivo de model para incluir os atributos para guardar os dados da imagem [usuario.ts](./projfabsoft_frontend/src/app/model/usuario.ts)
+
+```ts
+import { receita } from "./receita";
+
+export class usuario {
+    id: number;
+    marca: string;
+    modelo: string;
+    placa: string;
+    receita: receita;
+    foto: string; //ALTERAR AQUI
+    arquivoFoto: string; //ALTERAR AQUI
+    mimeType: string; //ALTERAR AQUI
+}
+```
+
+- Alterar o formulário para incluir o botão de seleção da imagem [form-usuario.component.html](./projfabsoft_frontend/src/app/form-usuario/form-usuario.component.html)
+
+
+```html
+<div class="form-group">
+    <label for="fileImagem">Imagem</label>
+    <input type="file" (change)="onFileSelected($event)" class="form-control" id="fileImagem" accept="image/*">
+</div>
+```
+
+- Alterar o controlador do fomulário para carregar o arquivo da imagem, converter em Base64 e incluir nos atributos da classe model
+
+```ts
+onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+        const file = input.files[0];
+        const reader = new FileReader();
+        reader.onload = () => {
+          const base64String = reader.result as string;
+          this.usuario.foto = base64String.split(',')[1]; 
+          this.usuario.arquivoFoto = file.name; 
+          this.usuario.mimeType = file.type;
+        };
+        reader.readAsDataURL(file);
+    }
+}
+```
+
+- Alterar o componente da tela principal para mostrar a imagem carregada [usuario.component.html](./projfabsoft_frontend/src/app/usuario/usuario.component.html)
+
+```html
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th> <!-- Alterar aqui -->
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Placa</th>
+                <th>receita</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umusuario of listausuarios">
+                <td><img src="data:{{umusuario.mimeType}};base64,{{umusuario.foto}}" width="200px;"></td> <!-- Alterar aqui -->
+                <td>{{umusuario.marca}}</td>
+                <td>{{umusuario.modelo}}</td>
+                <td>{{umusuario.placa}}</td>
+                <td>{{umusuario.receita !== null ? umusuario.receita.nome : '' }}</td>
+                <td><a (click)="alterar(umusuario)" 
+                    class="btn btn-secondary">Alterar</a>
+                    &nbsp;
+                    <a (click)="abrirConfirmacao(umusuario)" 
+                        class="btn btn-danger">Excluir</a>
+                
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+```

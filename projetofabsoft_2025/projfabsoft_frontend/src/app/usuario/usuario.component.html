@@ -1,0 +1,53 @@
+<main class="container">
+    <h2>usuarios</h2>
+    <a (click)="novo()" class="btn btn-primary">Novo</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th> <!-- Alterar aqui -->
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Placa</th>
+                <th>receita</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umusuario of listausuarios">
+                <td><img src="data:{{umusuario.mimeType}};base64,{{umusuario.foto}}" width="200px;"></td> <!-- Alterar aqui -->
+                <td>{{umusuario.marca}}</td>
+                <td>{{umusuario.modelo}}</td>
+                <td>{{umusuario.placa}}</td>
+                <td>{{umusuario.receita !== null ? umusuario.receita.nome : '' }}</td>
+                <td><a (click)="alterar(umusuario)" 
+                    class="btn btn-secondary">Alterar</a>
+                    &nbsp;
+                    <a (click)="abrirConfirmacao(umusuario)" 
+                        class="btn btn-danger">Excluir</a>
+                
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</main>
+
+
+
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir usuario</h5>
+            </div>
+            <div class="modal-body">
+            Confirma a exclusão do usuario?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>
