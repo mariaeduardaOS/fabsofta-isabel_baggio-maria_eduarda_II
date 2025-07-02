@@ -50,14 +50,12 @@ O **Restô** permite:
 
 ```bash
 git clone https://github.com/seuusuario/resto-chefmaisa.git
-2️⃣ Compile o projeto (Back-end)
-bash
 
+2️⃣ Compile o projeto (Back-end)
 cd projfabsoft
 mvn clean install
-3️⃣ Execute a aplicação
-bash
 
+3️⃣ Execute a aplicação
 mvn spring-boot:run
 Acesse em:
 
@@ -73,15 +71,11 @@ Java 17+
 Maven configurado no ambiente
 
 4️⃣ Rodando o Front-end (Angular)
-bash
-
 cd projfabsoft_frontend
 npm install
 ng serve
+
 Acesse em:
-
-bash
-
 http://localhost:4200
 
 ---
