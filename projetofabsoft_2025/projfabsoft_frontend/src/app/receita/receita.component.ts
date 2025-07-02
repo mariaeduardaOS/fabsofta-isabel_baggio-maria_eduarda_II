@@ -11,7 +11,7 @@ import * as bootstrap from 'bootstrap';
   selector: 'app-receita',
   imports: [HttpClientModule, CommonModule],
   templateUrl: './receita.component.html',
-  styleUrl: './receita.component.css',
+  styleUrls: ['./receita.component.css'],
   providers: [ReceitaService, Router]
 })
 export class ReceitaComponent {
@@ -29,8 +29,10 @@ export class ReceitaComponent {
     ){}
 
     ngOnInit(): void {
-      this.receitaService.getreceitas().subscribe(resposta => {
-          this.listareceitas = resposta;
+    this.receitaService.listar().subscribe(resposta => {
+  this.listareceitas = resposta;
+});
+
       })
     }
     novo(){
