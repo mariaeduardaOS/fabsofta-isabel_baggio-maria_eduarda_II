@@ -1,9 +1,0 @@
-{
-    "java.compile.nullAnalysis.mode": "disabled",
-    "plantuml.commandArgs": [],
-    "plantuml.diagramsRoot": "./diagramas",
-    "plantuml.exportOutDir": "./diagramas/png",
-    "plantuml.exportFormat": "png",
-    "plantuml.exportSubFolder": false,
-    "java.configuration.updateBuildConfiguration": "automatic"
-}
