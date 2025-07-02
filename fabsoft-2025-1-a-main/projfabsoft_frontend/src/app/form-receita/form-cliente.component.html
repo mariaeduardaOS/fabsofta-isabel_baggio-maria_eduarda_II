@@ -1,0 +1,40 @@
+<main class="container">
+    <h2>receita</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtNome">Nome</label>
+                <input type="text" [(ngModel)]="receita.nome" 
+                class="form-control" id="txtNome">
+            </div>
+
+            <div class="form-group">
+                <label for="txtEndereco">Endereço</label>
+                <input type="currency" [(ngModel)]="receita.endereco" 
+                class="form-control" id="txtEndereco">
+            </div>
+
+            <div class="form-group">
+                <label for="txtTelefone">Telefone</label>
+                <input type="text" [(ngModel)]="receita.telefone" 
+                class="form-control" id="txtTelefone">
+            </div>
+
+            <div class="form-group">
+                <label for="txtEmail">E-mail</label>
+                <input type="text" [(ngModel)]="receita.email" 
+                class="form-control" id="txtEmail">
+            </div>
+
+            <div class="form-group">
+                <label for="txtDataNascimento">Data Nascimento</label>
+                <input type="date" [(ngModel)]="receita.dataNascimento" 
+                class="form-control" id="txtDataNascimento">
+            </div>
+        </div>
+
+        <button (click)="salvar()"
+            class="btn btn-primary">Salvar</button>
+
+    </div>
+</main>
