@@ -8,7 +8,7 @@ import { MinhasReceitasComponent } from './minhas-receitas/minhas-receitas.compo
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'nova-receita', component: FormreceitaComponent },
+  { path: 'receita', component: FormreceitaComponent },
   { path: 'minhas-receitas', component: MinhasReceitasComponent },
   { path: '**', redirectTo: '' }
 ];

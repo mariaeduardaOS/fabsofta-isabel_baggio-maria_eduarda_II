@@ -1,19 +1,22 @@
-import { Component,ElementRef, ViewChild } from '@angular/core';
 import { Receita } from '../model/receita';
 import { ReceitaService } from '../service/receita.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import * as bootstrap from 'bootstrap';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 
 
 @Component({
   selector: 'app-receita',
-  imports: [HttpClientModule, CommonModule],
+
   templateUrl: './receita.component.html',
-  providers: [ReceitaService, Router]
+ 
 })
-export class ReceitaComponent {
+
+
+export class ReceitaComponent implements OnInit {
+
 
     public listareceitas:Receita[] = [];
 

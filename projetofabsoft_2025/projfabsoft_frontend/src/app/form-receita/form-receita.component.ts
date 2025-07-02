@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-form-receita',
   templateUrl: './form-receita.component.html',
-  standalone: true,
   imports: [HttpClientModule, CommonModule, FormsModule],
   providers: [ReceitaService, Router]
 })
