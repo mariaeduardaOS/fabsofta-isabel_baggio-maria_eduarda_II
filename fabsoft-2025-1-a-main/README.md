@@ -50,24 +50,17 @@ O **Restô** permite:
 
 ### 1️⃣ Clone o repositório
 
-```bash
 git clone https://github.com/seuusuario/resto-chefmaisa.git
+
 2️⃣ Compile o projeto (Back-end)
-bash
-Copiar
-Editar
 cd projfabsoft
 mvn clean install
+
 3️⃣ Execute a aplicação
-bash
-Copiar
-Editar
 mvn spring-boot:run
 Acesse em:
 
 bash
-Copiar
-Editar
 http://localhost:8080/api/v1/receitas
 ⚠️ Pré-requisitos:
 
@@ -76,18 +69,15 @@ Java 17+
 Maven configurado no ambiente
 
 4️⃣ Rodando o Front-end (Angular)
-bash
-Copiar
-Editar
+
 cd projfabsoft_frontend
 npm install
 ng serve
-Acesse em:
 
-bash
-Copiar
-Editar
+Acesse em:
 http://localhost:4200
+
+
 👩‍🍳 Desenvolvedoras
 Isabel Arantes Baggio
 
